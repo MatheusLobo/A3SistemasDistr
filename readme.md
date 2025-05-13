@@ -5,9 +5,10 @@ Este projeto é uma aplicação cliente-servidor desenvolvida para a disciplina 
 
 ## Equipe
 - Matheus Lobo de Souza Martins 1272312529
-- [------]
-- [------]
-- [------]
+- William Bitencourt de Castro 12723115263
+- Paullo Victor de carvalho Marques 12723117914
+- Vinicius Rian de Jesus Moreira 1272311431
+- Marcos Leones Leite Souza 1272312642
 
 ## Tecnologias Utilizadas
 - Linguagem: Python 3
