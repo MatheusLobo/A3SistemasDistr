@@ -26,9 +26,9 @@ CREATE TABLE IF NOT EXISTS tarefas (
 ''')
 
 # Inserir dados de exemplo
-c.execute("INSERT INTO usuarios (nome, tipo) VALUES ('Alice', 'funcionario')")
-c.execute("INSERT INTO usuarios (nome, tipo) VALUES ('Bob', 'supervisor')")
-c.execute("INSERT INTO usuarios (nome, tipo) VALUES ('Carol', 'gerente')")
+c.execute("INSERT INTO usuarios (nome, tipo) VALUES ('Marcos', 'funcionario')")
+c.execute("INSERT INTO usuarios (nome, tipo) VALUES ('Matheus', 'supervisor')")
+c.execute("INSERT INTO usuarios (nome, tipo) VALUES ('Willian', 'gerente')")
 
 conn.commit()
 conn.close()
