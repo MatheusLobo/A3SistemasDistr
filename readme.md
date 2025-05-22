@@ -4,12 +4,12 @@
 Este projeto é uma aplicação cliente-servidor desenvolvida para a disciplina de Sistemas Distribuídos e Mobile. Ele permite o acompanhamento de tarefas por diferentes perfis de usuários: Funcionário, Supervisor e Gerente, usando **comunicação via sockets TCP**.
 
 ## Equipe
-- Matheus Lobo de Souza Martins 1272312529
-- William Bitencourt de Castro 12723115263
-- Paullo Victor de Carvalho Marques 12723117914
-- Vinicius Rian de Jesus Moreira 1272311431
-- Marcos Leones Leite Souza 1272312642
-- Adailson
+- Matheus Lobo de Souza Martins     # 1272312529
+- William Bitencourt de Castro      # 12723115263
+- Paullo Victor de Carvalho Marques # 12723117914
+- Vinicius Rian de Jesus Moreira    # 1272311431
+- Marcos Leones Leite Souza         # 1272312642
+- Adailson Souza da Cunha           # 1272319876
 
 ## Tecnologias Utilizadas
 - Linguagem: Python 3
