@@ -1,5 +1,5 @@
 # Projeto - Sistema de Acompanhamento de Tarefas (Cliente-Servidor via Socket)
-
+ 
 ## Descrição
 Este projeto é uma aplicação cliente-servidor desenvolvida para a disciplina de Sistemas Distribuídos e Mobile. Ele permite o acompanhamento de tarefas por diferentes perfis de usuários: Funcionário, Supervisor e Gerente, usando **comunicação via sockets TCP**.
 
