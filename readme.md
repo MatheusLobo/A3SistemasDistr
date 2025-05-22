@@ -9,7 +9,7 @@ Este projeto é uma aplicação cliente-servidor desenvolvida para a disciplina 
 - Paullo Victor de Carvalho Marques 12723117914
 - Vinicius Rian de Jesus Moreira 1272311431
 - Marcos Leones Leite Souza 1272312642
--
+- Adailson
 
 ## Tecnologias Utilizadas
 - Linguagem: Python 3
