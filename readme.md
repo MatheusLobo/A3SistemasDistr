@@ -1,76 +1,83 @@
-# Projeto - Sistema de Acompanhamento de Tarefas (Cliente-Servidor)
+# Projeto - Sistema de Acompanhamento de Tarefas (Cliente-Servidor via Socket)
 
 ## Descrição
-Este projeto é uma aplicação cliente-servidor desenvolvida para a disciplina de Sistemas Distribuídos e Mobile. Ele permite o acompanhamento de tarefas por diferentes perfis de usuários: Funcionário, Supervisor e Gerente.
+Este projeto é uma aplicação cliente-servidor desenvolvida para a disciplina de Sistemas Distribuídos e Mobile. Ele permite o acompanhamento de tarefas por diferentes perfis de usuários: Funcionário, Supervisor e Gerente, usando **comunicação via sockets TCP**.
 
 ## Equipe
 - Matheus Lobo de Souza Martins 1272312529
 - William Bitencourt de Castro 12723115263
-- Paullo Victor de carvalho Marques 12723117914
+- Paullo Victor de Carvalho Marques 12723117914
 - Vinicius Rian de Jesus Moreira 1272311431
 - Marcos Leones Leite Souza 1272312642
+-
 
 ## Tecnologias Utilizadas
 - Linguagem: Python 3
-- Framework: Flask
 - Banco de Dados: SQLite
-- Biblioteca HTTP para os clientes: `requests`
+- Comunicação entre cliente-servidor: Socket TCP (módulo `socket`)
+- Interface: Terminal (modo texto)
 
 ## Estrutura do Projeto
 ```
-├── app.py                  # Servidor Flask
-├── init_db.py              # Script para criar e popular o banco
-├── cliente_funcionario.py  # Cliente do funcionário
-├── cliente_supervisor.py   # Cliente do supervisor
-├── cliente_gerente.py      # Cliente do gerente
-├── database.db             # Banco de dados SQLite
-├── README.md               # Este arquivo
+├── servidor_socket.py            # Servidor baseado em sockets TCP
+├── cliente_funcionario_socket.py # Cliente terminal para funcionários
+├── cliente_supervisor_socket.py  # Cliente terminal para supervisores
+├── cliente_gerente_socket.py     # Cliente terminal para gerentes
+├── init_db.py                    # Script para criar e popular o banco
+├── database.db                   # Banco de dados SQLite
+├── README.md                     # Este arquivo
 ```
 
 ## Instruções para Execução
 
-### 1. Instalar dependências
-```bash
-pip install flask requests
-```
+### 1. Instalar Python 3 e bibliotecas padrão
+Não há dependências externas — apenas `socket` e `sqlite3`, que já vêm com o Python.
 
 ### 2. Criar o banco de dados
+Execute o script para criar e popular o banco:
+
 ```bash
 python init_db.py
 ```
 
-### 3. Iniciar o servidor
+### 3. Iniciar o servidor de socket
+Execute o servidor que ficará escutando os clientes:
+
 ```bash
-python app.py
+python servidor_socket.py
 ```
 
-### 4. Executar os clientes
+### 4. Executar os clientes (cada um em um terminal separado)
+
 - Funcionário:
   ```bash
-  python cliente_funcionario.py 1
+  python cliente_funcionario_socket.py
   ```
+
 - Supervisor:
   ```bash
-  python cliente_supervisor.py
+  python cliente_supervisor_socket.py
   ```
+
 - Gerente:
   ```bash
-  python cliente_gerente.py
+  python cliente_gerente_socket.py
   ```
 
 ## Justificativa da Abordagem de Comunicação
-Foi utilizada a abordagem de **API REST via Flask**, por ser simples, direta e eficaz para o modelo cliente-servidor proposto. Essa escolha permite fácil manutenção, escalabilidade e testes com ferramentas padrão como `curl` ou Postman.
+Inicialmente planejamos implementar a comunicação utilizando API REST com Flask, o que é indicado para aplicações web mais estruturadas e escaláveis. No entanto, optamos por utilizar sockets TCP para fins educacionais, pois isso nos proporciona maior controle sobre a comunicação entre cliente e servidor, além de permitir o aprofundamento em conceitos fundamentais de redes e protocolos. Essa abordagem também se alinha bem aos objetivos da disciplina de Sistemas Distribuídos, focando na simulação de interações de baixo nível entre nós da rede
 
-##  Funcionalidades por Perfil
+## Funcionalidades por Perfil
+
 - **Funcionário**:
   - Ver tarefas atribuídas
   - Concluir tarefas
 
 - **Supervisor**:
   - Cadastrar tarefas para funcionários
-  - Ver tarefas atribuídas a um funcionário
+  - Ver tarefas de um funcionário específico
 
 - **Gerente**:
-  - Relatório de todas as tarefas
-  - Relatório de tarefas pendentes
-  - Lista de funcionários sem tarefas pendentes
+  - Ver todas as tarefas
+  - Ver apenas tarefas pendentes
+  - Ver funcionários sem tarefas pendentes

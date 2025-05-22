@@ -1,4 +1,3 @@
-# servidor_socket.py - Servidor baseado em sockets para atender clientes
 import socket
 import sqlite3
 
@@ -31,16 +30,19 @@ def tratar_comando(msg):
             return "Tarefa concluída com sucesso."
 
         elif msg.startswith("CADASTRAR_TAREFA"):
-            dados = msg.strip().split(" ", 1)[1]
-            if "|" not in dados or dados.count("|") != 2:
-                return "Erro: formato inválido. Use descricao|funcionario_id|supervisor_id"
-            descricao, func_id, sup_id = dados.split("|")
-            executar_sql(
-                "INSERT INTO tarefas (descricao, status, funcionario_id, supervisor_id) VALUES (?, 'pendente', ?, ?)",
-                (descricao.strip(), func_id.strip(), sup_id.strip()),
-                fetch=False
-            )
-            return "Tarefa cadastrada com sucesso."
+            try:
+                dados = msg.strip().split(" ", 1)[1]
+                if "|" not in dados or dados.count("|") != 2:
+                    return "Erro: formato inválido. Use descricao|funcionario_id|supervisor_id"
+                descricao, func_id, sup_id = dados.split("|")
+                executar_sql(
+                    "INSERT INTO tarefas (descricao, status, funcionario_id, supervisor_id) VALUES (?, 'pendente', ?, ?)",
+                    (descricao.strip(), func_id.strip(), sup_id.strip()),
+                    fetch=False
+                )
+                return "Tarefa cadastrada com sucesso."
+            except Exception as e:
+                return f"Erro ao cadastrar tarefa: {e}"
 
         elif msg.strip() == "RELATORIO_TODAS":
             tarefas = executar_sql("SELECT id, descricao, status FROM tarefas")
