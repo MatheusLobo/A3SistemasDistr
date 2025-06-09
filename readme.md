@@ -30,6 +30,9 @@ Este projeto é uma aplicação cliente-servidor desenvolvida para a disciplina 
 
 ## Instruções para Execução
 
+### Videolink
+https://www.youtube.com/watch?v=QbUxLEyb-Tk
+
 ### 1. Instalar Python 3 e bibliotecas padrão
 Não há dependências externas — apenas `socket` e `sqlite3`, que já vêm com o Python.
 
